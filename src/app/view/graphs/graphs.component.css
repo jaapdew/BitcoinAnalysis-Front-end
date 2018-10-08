@@ -1,0 +1,41 @@
+.Dates{
+    display: block;
+    position: absolute;
+    margin-top:25%;
+    margin-left: 200px;
+}
+
+#chartcontainer{
+    width: 1200px;
+    float: left;
+    margin-left: 20%;
+    margin-top: 5%;
+}
+
+.topCharts{
+    width: 1200px;
+    float: left;
+}
+
+.bottomCharts{
+    width: 1200px;
+    float: left;
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+button{
+    display: block;
+    background-color: #eeb058;
+    width: 175px;
+}
+
+input{
+    width: 175px;;
+}

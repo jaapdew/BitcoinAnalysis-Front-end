@@ -1,0 +1,37 @@
+<div class="container">
+        <div class="buttons">
+                <button class="button" mat-button (click)="getPredictions()">Show existing Prediction</button>
+                <button class="button" mat-button (click)="createPrediction()" disabled={{buttonDisabled}}>Create new Prediction</button>
+                <div id="startDate">
+                        <input [matDatepicker]="startDate" (focus)="startDate.open()" [(ngModel)]="start" (ngModelChange)="dateChange()">
+                        <mat-datepicker #startDate></mat-datepicker>
+                </div>
+                <div id="endDate">
+                        <input [matDatepicker]="endDate" (focus)="endDate.open()" [(ngModel)]="end" (ngModelChange)="dateChange()">
+                        <mat-datepicker #endDate></mat-datepicker>
+                </div>
+        </div>
+        <div class="data">
+            <table style="widows: 70%">
+                <tr id="tablehead">
+                        <th id="thleft">Id</th>
+                        <th>Standard Deviation</th>
+                        <th>Last Close Value</th>
+                        <th>Factor</th>
+                        <th>One Day Prediction</th>
+                        <th>Start</th>
+                        <th id="thright">End</th>
+                    </tr>
+            <tbody id="tablebody">
+                     <tr *ngFor="let predictionDto of predictions; let i=index; let o= odd; let e=even;" [ngClass]="{ odd: o, even: e }">
+                        <td>{{predictionDto.id}}</td>
+                        <td>{{decimalFormat(predictionDto.standardDeviation)}}</td>
+                        <td>{{decimalFormat(predictionDto.lastCloseValue)}}</td>
+                        <td>{{predictionDto.theFactor}}</td>
+                        <td>{{decimalFormat(predictionDto.oneDayPrediction)}}</td>
+                        <td>{{unixToDate(predictionDto.start)| date: 'yyyy/MM/dd hh:mm'}}</td>
+                        <td>{{unixToDate(predictionDto.end)| date: 'yyyy/MM/dd hh:mm'}}</td>
+                    </tr>
+            </table>
+        </div>
+</div>

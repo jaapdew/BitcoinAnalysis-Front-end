@@ -1,0 +1,41 @@
+<div class= "card">
+  <div class="b" id="title">
+   <b>{{databaseName}}</b>
+  </div>
+
+  <div class="b" id=status>
+    <div class="cl"><b>Status:</b></div>
+    <div class="cr">{{databaseStatus}}</div>
+    <i class="material-icons" id="connected" *ngIf="!(databaseStatus == 'Disabled'); else disconnected">check_circle_outline</i>
+    <ng-template #disconnected><i class="material-icons" id="disconnected">block</i></ng-template>
+  </div>
+
+  <div class="b" id=scraping>
+    <div class="cl"><b>Scraping:</b></div>
+    <div class="cr">
+      <ui-switch name="uiSwitch" [(ngModel)]="scraping" (ngModelChange)="switch()" [disabled]="disableuiswitch" color="#f87a14"></ui-switch>
+    </div>
+    
+  </div>
+
+  <div class="b" id=entries>
+    <div class="cl"><b>Entries:</b></div>
+    <div *ngIf="!(databaseEntries == -1)"class="cr">
+      {{databaseEntriesParsed}}</div>
+  </div>
+
+  <div class="b" id=firstentry>
+    <div class="cl"><b>First Entry:</b></div>
+    <div class="cr">{{firstEntry}}</div>
+  </div>
+
+  <div class="c" id=lastEntry>
+    <div class="cl"><b>Last Entry:</b></div>
+    <div class="cr">{{lastEntry}}</div>
+  </div>
+  <div id="HSS-switch">
+      <div class="cl"><b>HSS:</b></div>
+      <div class="cr">
+        <ui-switch id="HSS" color="#f87a14"></ui-switch>
+      </div>
+</div>

@@ -1,0 +1,78 @@
+table{
+    border-width: 0px;
+    border-radius: 25px;
+    border-collapse: collapse;
+    padding-right: 15px;
+}
+
+.data{
+    float: left;
+    margin-left: 30%;
+    margin-top: 5%;
+}
+
+th{
+    width: 150px;
+    text-align: center;
+    height: 25px;
+}
+
+td{
+    width: 150px;
+    text-align: center;
+    border-left-width: 0.5px;
+    border-right-width: 0.5px;
+}
+
+#tablehead{
+    display: block;
+    height: 50px;
+    line-height: 50px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    background-color: #eeb058;
+}
+
+#tablebody{
+    height: auto;
+    width: 100%;
+    display: block;
+    overflow-y: scroll;
+    max-height: 600px;
+}
+
+.buttons{
+    display: block;
+    position: absolute;
+    margin-top:25%;
+    margin-left: 200px;
+    width: 180px;
+}
+
+
+button{
+    display: block;
+    background-color: #eeb058;
+    width: 180px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+}
+
+input{
+    width: 85px;
+}
+
+#startDate{
+    float: left;
+}
+#endDate{
+    float:right;
+}
+
+.odd{
+    background-color: #cfcfcf;
+}
+
+.even{
+    background-color: #ececec;
+}

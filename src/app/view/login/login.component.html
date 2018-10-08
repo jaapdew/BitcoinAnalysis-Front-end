@@ -1,0 +1,18 @@
+<div class="container">
+  <div id="form-wrapper">
+    <form id="form">
+      <div class="form">
+        <label for="name"></label>
+        <input type="text" class="textfield" id="name" [(ngModel)] = "username" name="username" required>
+      </div>
+
+      <div class="form">
+        <label for="alterEgo" ></label>
+        <input type="password" class="textfield" id="password"  [(ngModel)]="password" name="password">
+      </div>
+
+      <button type="submit" id="submit-button" (click)="login()" >Login</button>
+
+    </form>
+  </div>
+</div>

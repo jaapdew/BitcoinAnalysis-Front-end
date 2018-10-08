@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="dates">
+      <div id="startDate">
+          <input [matDatepicker]="startDate" (focus)="startDate.open()" [(ngModel)]="startDateField" (ngModelChange)="dateChange()">
+          <mat-datepicker #startDate></mat-datepicker>
+      </div>
+      <div id="endDate">
+          <input [matDatepicker]="endDate" (focus)="endDate.open()" [(ngModel)]="endDateField" (ngModelChange)="dateChange()">
+          <mat-datepicker #endDate></mat-datepicker>
+      </div>
+      <button mat-button id="button" disabled={{buttonDisabled}} (click)="getData()">Request Data</button>
+    </div>
+    <div class="data">
+        <table *ngIf="data">
+            <tbody id="tablehead">
+                <tr id="trhead">
+                <th id="thleft">Timestamp</th>
+                <th>Open</th>
+                <th>High</th>
+                <th>Low</th>
+                <th id="thright">Close</th>
+                </tr>
+            </tbody>
+            <tbody id="tablebody">
+                <tr *ngFor="let dataDto of data; let i=index; let o= odd; let e=even;" [ngClass]="{ odd: o, even: e }">
+                    <td>{{unixToDate(dataDto.timeStamp) | date: 'yyyy/MM/dd hh:mm'}}</td>
+                    <td>{{decimalFormat(dataDto.open)}}</td>
+                    <td>{{decimalFormat(dataDto.high)}}</td>
+                    <td>{{decimalFormat(dataDto.low)}}</td>
+                    <td>{{decimalFormat(dataDto.close)}}</td>
+              </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
