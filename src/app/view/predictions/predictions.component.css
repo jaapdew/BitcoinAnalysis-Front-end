@@ -12,9 +12,9 @@ table{
 }
 
 th{
-    width: 150px;
+    width: 155px;
     text-align: center;
-    height: 25px;
+    height: 50px;
 }
 
 td{
@@ -59,7 +59,7 @@ button{
 }
 
 input{
-    width: 85px;
+    width: 84px;
 }
 
 #startDate{
